@@ -5,6 +5,7 @@ import { errorHandler } from '../../utils/errorHandler';
 // Handler for POST requests
 export async function POST(req: Request, res: Response) {
     try {
+        console.log("API Calling")
         const { username } = await req.json();
         if (!username) {
             return new Response(JSON.stringify({ message: "Username is required" }), {
@@ -22,8 +23,3 @@ export async function POST(req: Request, res: Response) {
         errorHandler(res, error);
     }
 }
-
-// Example placeholder for GET requests if needed
-// export async function get(req: NextApiRequest, res: NextApiResponse) {
-//     // Handle GET requests
-// }
